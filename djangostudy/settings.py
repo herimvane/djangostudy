@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,9 +55,8 @@ ROOT_URLCONF = 'djangostudy.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
-        ,
-        'APP_DIRS': True,
+        'DIRS': [BASE_DIR / 'templates'],
+        'APP_DIRS': True, #这一选项将会让 DjangoTemplates在每个 INSTALLED_APPS 文件夹中寻找 "templates" 子目录。
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
